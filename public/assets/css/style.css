@@ -1,0 +1,86 @@
+body{
+    background-image: url(../img/zaun.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    background-position: center;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    border: 1rem solid;
+    border-color: white;
+}
+
+
+p{
+    font-size: 2em;
+    font-weight: 900;
+    text-align: center;
+}
+
+.score{
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size:35px;
+
+}
+
+#joueurs{
+    color: white;
+    border-bottom: 10px solid white;
+}
+
+#message{
+    color: white;
+}
+
+.button{
+
+}
+
+.reset{
+    background-color: magenta;
+    border: none;
+    font-size: 2.5em;
+    border-radius: 30px;
+    padding: 10px 80px;
+    font-weight: 900;
+    box-shadow: 0 10px 20px 0 magenta;
+    margin-bottom: 65px;
+}
+
+.next{
+    background-color: cyan;
+    border: none;
+    font-size: 2.5em;
+    border-radius: 30px;
+    padding: 10px 80px;
+    font-weight: 900;
+    box-shadow: 0 10px 20px 0 cyan;
+}
+
+.magenta{
+    border-color: magenta;
+}
+
+.cyan{
+    border-color: cyan;
+}
+
+.magentaCyan{
+    border-left-color: magenta;
+    border-top-color: magenta;
+    border-right-color: cyan;
+    border-bottom-color: cyan;
+}
+
+#message{
+    margin-top: 50px;
+}
