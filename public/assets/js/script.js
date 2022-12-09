@@ -13,52 +13,14 @@ let btnNext = document.querySelector('.next');
 let message = document.getElementById('message');
 
 
-// CHOIX DE L'ORDINATEUR
-
-choixOrdi = () => {
-
-    let randomOrdi =  Math.floor(Math.random() * 6) + 1
-
-    if (randomOrdi == 1) {
-        console.log('caitlyn');
-    } else if (randomOrdi == 2) {
-        console.log('ekko');
-    } else if (randomOrdi == 3) {
-        console.log('jinx');
-    } else if (randomOrdi == 4) {
-        console.log('silco');
-    } else if (randomOrdi == 5) {
-        console.log('vi');
-    } else {
-        console.log('jayce');
-    }
-
-images[randomOrdi-1].classList.add('cyan');
-
-}
-
 // COMPARAISON AVEC JOUEUR
 
 choixPlayer = () => {
 
     let randomOrdi =  Math.floor(Math.random() * 6) + 1
+    images[randomOrdi-1].classList.add('cyan');
     
     // EGALITES
-
-    // if (player == 'caitlyn' && randomOrdi == 1) {
-    //     message.textContent = 'Égalité !';
-    //     return
-    // } else if (player == 'ekko' && randomOrdi == 2) {
-    //     console.log('égalité');
-    // } else if (player == 'jinx' && randomOrdi == 3) {
-    //     console.log('égalité');
-    // } else if (player == 'silco' && randomOrdi == 4) {
-    //     console.log('égalité');
-    // } else if (player == 'vi' && randomOrdi == 5) {
-    //     console.log('égalité');
-    // } else if (player == 'jayce' && randomOrdi == 6) {
-    //     console.log('égalité');
-    // }
     
 
     if ((player == 'caitlyn' && randomOrdi == 1)
@@ -78,14 +40,23 @@ choixPlayer = () => {
         
         if (player == 'caitlyn' && randomOrdi == 2) {
             victoireOrdi();
+            message.textContent = 'Perdu - Victoire EKKO';
         } else if (player == 'caitlyn' && randomOrdi == 3) {
             victoireOrdi();
+            message.textContent = 'Perdu - Victoire JINX';
         } else if (player == 'caitlyn' && randomOrdi == 4) {
-            victoireOrdi();
+            victoirePlayer();
+            message.textContent = 'Gagné - Victoire CAITLYN';
         } else if (player == 'caitlyn' && randomOrdi == 5) {
             victoireOrdi();
+            message.textContent = 'Perdu - Victoire VI';
+        } else if (player == 'caitlyn' && randomOrdi == 6) {
+            victoirePlayer();
+            message.textContent = 'Gagné - Victoire Caitlyn';
         } else {
             victoirePlayer();
+            victoireOrdi();
+            message.textContent = 'Égalité !';
         } 
     }
 
@@ -94,14 +65,23 @@ choixPlayer = () => {
 
         if (player == 'ekko' && randomOrdi == 1) {
             victoirePlayer();
+            message.textContent = 'Gagné - Victoire EKKO';
         } else if (player == 'ekko' && randomOrdi == 3) {
             victoireOrdi();
+            message.textContent = 'Perdu - Victoire JINX';
         } else if (player == 'ekko' && randomOrdi == 4) {
-            victoireOrdi();
+            victoirePlayer();
+            message.textContent = 'Gagné - Victoire EKKO';
         } else if (player == 'ekko' && randomOrdi == 5) {
             victoireOrdi();
+            message.textContent = 'Perdu - Victoire VI';
+        } else if (player == 'ekko' && randomOrdi == 6) {
+            victoireOrdi();
+            message.textContent = 'Perdu - Victoire Jayce';
         } else {
             victoirePlayer();
+            victoireOrdi();
+            message.textContent = 'Égalité !';
         }
     
     }
@@ -110,14 +90,23 @@ choixPlayer = () => {
         
         if (player == 'jinx' && randomOrdi == 1) {
             victoirePlayer();
+            message.textContent = 'Gagné - Victoire JINX';
         } else if (player == 'jinx' && randomOrdi == 2) {
-            victoirePlayer();
+            victoireOrdi();
+            message.textContent = 'Perdu - Victoire EKKO';
         } else if (player == 'jinx' && randomOrdi == 4) {
             victoirePlayer();
+            message.textContent = 'Gagné - Victoire JINX';
         } else if (player == 'jinx' && randomOrdi == 5) {
             victoireOrdi();
+            message.textContent = 'Perdu - Victoire VI';
+        } else if (player == 'jinx' && randomOrdi == 6) {
+            victoirePlayer();
+            message.textContent = 'Gagné - Victoire JINX';
         } else {
             victoirePlayer();
+            victoireOrdi();
+            message.textContent = 'Égalité !';
         }
     }
 
@@ -126,14 +115,23 @@ choixPlayer = () => {
         
         if (player == 'silco' && randomOrdi == 1) {
             victoirePlayer();
+            message.textContent = 'Gagné - Victoire SILCO';
         } else if (player == 'silco' && randomOrdi == 2) {
             victoirePlayer();
+            message.textContent = 'Gagné - Victoire SILCO';
         } else if (player == 'silco' && randomOrdi == 3) {
             victoireOrdi();
+            message.textContent = 'Perdu - Victoire JINX';
         } else if (player == 'silco' && randomOrdi == 5) {
             victoireOrdi();
+            message.textContent = 'Perdu - Victoire VI';
+        } else if (player == 'silco' && randomOrdi == 6) {
+            victoireOrdi();
+            message.textContent = 'Perdu - Victoire JAYCE';
         } else {
             victoirePlayer();
+            victoireOrdi();
+            message.textContent = 'Égalité !';
         }
     }
 
@@ -142,14 +140,23 @@ choixPlayer = () => {
         
         if (player == 'vi' && randomOrdi == 1) {
             victoirePlayer();
+            message.textContent = 'Gagné - Victoire VI';
         } else if (player == 'vi' && randomOrdi == 2) {
             victoirePlayer();
+            message.textContent = 'Gagné - Victoire VI';
         } else if (player == 'vi' && randomOrdi == 3) {
             victoirePlayer();
+            message.textContent = 'Gagné - Victoire VI';
         } else if (player == 'vi' && randomOrdi == 4) {
             victoirePlayer();
+            message.textContent = 'Gagné - Victoire VI';
+        } else if (player == 'vi' && randomOrdi == 6) {
+            victoirePlayer();
+            message.textContent = 'Gagné - Victoire VI';
         } else {
             victoirePlayer();
+            victoireOrdi();
+            message.textContent = 'Égalité !';
         }
     }
 
@@ -157,15 +164,24 @@ choixPlayer = () => {
     if (player == 'jayce') {
         
         if (player == 'jayce' && randomOrdi == 1) {
-            victoireOrdi();
+            victoirePlayer();
+            message.textContent = 'Gagné - Victoire JAYCE'
         } else if (player == 'jayce' && randomOrdi == 2) {
             victoireOrdi();
+            message.textContent = 'Perdu - Victoire JINX'
         } else if (player == 'jayce' && randomOrdi == 3) {
             victoireOrdi();
+            message.textContent = 'Perdu - Victoire SILCO'
         } else if (player == 'jayce' && randomOrdi == 4) {
+            victoirePlayer();
+            message.textContent = 'Gagné - Victoire JAYCE'
+        } else if (player == 'jayce' && randomOrdi == 5) {
             victoireOrdi();
+            message.textContent = 'Perdu - Victoire VI';
         } else {
             victoireOrdi();
+            victoirePlayer();
+            message.textContent = 'Égalité !';
         }
     }
 }
@@ -183,18 +199,15 @@ images.forEach((image)  => {
         player = image.id
 
     image.classList.add('magenta');
-    choixOrdi()
+
     choixPlayer()
 })
 });
 
-// CHANGEMENT DE COULEURS ORDINATEUR
-
-
 
 // MESSAGES DES JOUEURS
 
-message.textContent = 'A toi de jouer !'
+message.textContent = 'A toi de jouer, cliques sur un perso !'
 
 // SCORE
 
@@ -225,7 +238,7 @@ let nouvelleManche = () => {
         btn.classList.remove('magentaCyan');
     });
 
-    message.textContent = "A toi de jouer !";
+    message.textContent = "A toi de jouer, cliques sur un perso !";
 };
 
 btnNext.addEventListener('click', nouvelleManche);
